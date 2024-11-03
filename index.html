@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid</title>
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+  <div id="wrapper" class="wrapper">
+    <header id="header" class="header">
+      <div class="header__container">
+        <ul class="header__pages pages list">
+          <li class="pages__item">
+            <a href="max.html" class="pages__link link">MaxGraph</a>
+          </li>
+        </ul>
+        <nav id="header-nav" class="header__nav">
+          <ul id="header-menu" class="header__menu header-menu list">
+            <li class="header-menu__item">
+              <a href="#fr" class="header-menu__link link">
+                <span class="header-menu__link-text">fr</span>
+              </a>
+            </li>
+            <li class="header-menu__item">
+              <a href="#minmax" class="header-menu__link link">
+                <span class="header-menu__link-text">minmax()</span>
+              </a>
+            </li>
+            <li class="header-menu__item">
+              <a href="#grid-auto-flow" class="header-menu__link link">
+                <span class="header-menu__link-text">grid-auto-flow</span>
+              </a>
+            </li>
+            <li class="header-menu__item">
+              <a href="#repeat" class="header-menu__link link">
+                <span class="header-menu__link-text">repeat()</span>
+              </a>
+            </li>
+            <li class="header-menu__item">
+              <a href="#gap" class="header-menu__link link">
+                <span class="header-menu__link-text">gap</span>
+              </a>
+            </li>
+            <li class="header-menu__item">
+              <a href="#grid-auto-flow" class="header-menu__link link">
+                <span class="header-menu__link-text">grid-auto-flow, grid-auto-columns, grid-auto-rows</span>
+              </a>
+            </li>
+            <li class="header-menu__item">
+              <a href="#auto-fill" class="header-menu__link link">
+                <span class="header-menu__link-text">auto-fill</span>
+              </a>
+            </li>
+            <li class="header-menu__item">
+              <a href="#auto-fit" class="header-menu__link link">
+                <span class="header-menu__link-text">auto-fit</span>
+              </a>
+            </li>
+            <li class="header-menu__item">
+              <a href="#moving-columns" class="header-menu__link link">
+                <span class="header-menu__link-text">
+                  Перемещение ячеек внутри сетки (по колонкам)
+                </span>
+              </a>
+            </li>
+            <li class="header-menu__item">
+              <a href="#moving-rows" class="header-menu__link link">
+                <span class="header-menu__link-text">
+                  Перемещение ячеек внутри сетки (по рядам)
+                </span>
+              </a>
+            </li>
+            <li class="header-menu__item">
+              <a href="#moving-items" class="header-menu__link link">
+                <span class="header-menu__link-text">
+                  Перемещение ячеек внутри колонок и рядов
+                </span>
+              </a>
+            </li>
+            <li class="header-menu__item">
+              <a href="#grid-template" class="header-menu__link link">
+                <span class="header-menu__link-text">
+                  Сокращённая запись grid-template
+                </span>
+              </a>
+            </li>
+            <li class="header-menu__item">
+              <a href="#areas" class="header-menu__link link">
+                <span class="header-menu__link-text">
+                  Области сетки grid areas
+                </span>
+              </a>
+            </li>
+            <li class="header-menu__item">
+              <a href="#attachmed" class="header-menu__link link">
+                <span class="header-menu__link-text">
+                  Вложенные сетки
+                </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__burger-box">
+          <button id="header-burger" class="header__burger burger btn">
+            <span class="burger__line"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main id="main" class="main">
+      <section id="grid" class="grid">
+        <div class="grid__container">
+          <h1 class="grid__title title">Grid</h1>
+          <div id="fr" class="wrapper-grid dark-block">
+            <h2 class="heading">fr</h2>
+            <p class="text">
+              fr - фракция, значение для адаптивной вёрстки
+            </p>
+            <p class="text">
+              grid-template-columns: 200px 1fr 1fr; <i>- ширина и кол-во колонок</i>
+            </p>
+            <div class="grid-1 grid-box">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>10</div>
+              <div>11</div>
+              <div>12</div>
+              <div>13</div>
+              <div>14</div>
+              <div>15</div>
+              <div>16</div>
+              <div>17</div>
+              <div>18</div>
+              <div>19</div>
+              <div>20</div>
+            </div>
+          </div>
+          <div id="minmax" class="wrapper-grid">
+            <h2 class="heading">minmax()</h2>
+            <p class="text">
+              minmax() - первое минимальное значение, второе максимальное
+            </p>
+            <p class="text">
+              grid-template-columns: minmax(100px, 500px) 100px 100px 100px;
+            </p>
+            <div class="grid-2 grid-box">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>10</div>
+              <div>11</div>
+              <div>12</div>
+              <div>13</div>
+              <div>14</div>
+              <div>15</div>
+              <div>16</div>
+              <div>17</div>
+              <div>18</div>
+              <div>19</div>
+              <div>20</div>
+            </div>
+          </div>
+          <div id="grid-auto-flow" class="wrapper-grid dark-block">
+            <h2 class="heading">grid-auto-flow</h2>
+            <p class="text">
+              grid-template-columns: 100px 100px 100px 100px 100px; <i>- ширина и кол-во колонок</i>
+            </p>
+            <p class="text">
+              grid-template-rows: 50px 50px 50px 50px 50px; <i>- высота и кол-во рядов</i>
+            </p>
+            <p class="text">
+              grid-auto-flow: column; <i>- по умолчанию row, т.е. построение блоков в порядке рядов</i>
+            </p>
+            <div class="grid-3 grid-box">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>10</div>
+              <div>11</div>
+              <div>12</div>
+              <div>13</div>
+              <div>14</div>
+              <div>15</div>
+              <div>16</div>
+              <div>17</div>
+              <div>18</div>
+              <div>19</div>
+              <div>20</div>
+            </div>
+          </div>
+          <div id="repeat" class="wrapper-grid">
+            <h2 class="heading">repeat()</h2>
+            <p class="text">
+              repeat() - первое значение указывает кол-во повторений/колонок/рядов, второе и последующие указывают ширину/высоту в зависимости колонки или ряды
+            </p>
+            <p class="text">
+              grid-template-columns: repeat(2, 70px 200px) 500px;
+            </p>
+            <p class="text">
+              grid-template-rows: 100px 100px 100px 100px;
+            </p>
+            <div class="grid-4 grid-box">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>10</div>
+              <div>11</div>
+              <div>12</div>
+              <div>13</div>
+              <div>14</div>
+              <div>15</div>
+            </div>
+          </div>
+          <div id="gap" class="wrapper-grid dark-block">
+            <h2 class="heading">gap</h2>
+            <p class="text">
+              grid-column-gap: 30px; <i>- отступы между КОЛОНКАМИ</i>
+            </p>
+            <p class="text">
+              grid-row-gap: 20px; <i>- отступы между РЯДАМИ</i>
+            </p>
+            <p class="text">
+              grid-gap: 50px 10px; <i>- общее свойство по отступам. первое между рядами, второе между колонками</i>
+            </p>
+            <p class="text">
+              gap: 50px 10px; <i>- также можно указать просто gap и прописать одно два значения.</i>
+            </p>
+            <p class="text">
+              Одно значение оно назначается и рядам и колонкам
+            </p>
+            <br><br>
+            <p class="text">
+              grid-template-columns: 70px 70px 70px 70px 70px;
+            </p>
+            <p class="text">
+              gap: 10px 30px;
+            </p>
+            <div class="grid-5 grid-box">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>10</div>
+              <div>11</div>
+              <div>12</div>
+              <div>13</div>
+              <div>14</div>
+              <div>15</div>
+              <div>16</div>
+              <div>17</div>
+              <div>18</div>
+              <div>19</div>
+              <div>20</div>
+            </div>
+          </div>
+          <div id="grid-auto" class="wrapper-grid">
+            <h2 class="heading">grid-auto-flow, grid-auto-columns, grid-auto-rows</h2>
+            <p class="text">
+              grid-template-columns: 100px;
+            </p>
+            <p class="text">
+              grid-template-rows: 100px 100px 100px 100px 100px;
+            </p>
+            <p class="text">
+              Значения для неявных элементов, для которых не указывались значения
+            </p>
+            <p class="text">
+              grid-auto-flow: column; <i>- или row для рядов</i>
+            </p>
+            <p class="text">
+              /* grid-auto-rows: 500px; */
+            </p>
+            <p class="text">
+              grid-auto-columns: 200px; <i>- необходимо сначала прописать grid-auto-flow: column;</i>
+            </p>
+            <div class="grid-6 grid-box">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>10</div>
+              <div>11</div>
+              <div>12</div>
+              <div>13</div>
+              <div>14</div>
+              <div>15</div>
+              <div>16</div>
+              <div>17</div>
+              <div>18</div>
+              <div>19</div>
+              <div>20</div>
+            </div>
+          </div>
+          <div id="auto-fill" class="wrapper-grid dark-block">
+            <h2 class="heading">auto-fill</h2>
+            <p class="text">
+              auto-fill - автоматически переносит ячейки на новую строку в зависимости от ширины экрана
+            </p>
+            <p class="text">
+              grid-template-columns: repeat(auto-fill, 200px);
+            </p>
+            <p class="text">
+              gap: 20px;
+            </p>
+            <p class="text">
+              <i>grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); - можно указать минимальную ширину при сужении</i>
+            </p>
+            <div class="grid-7 grid-box">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>10</div>
+              <div>11</div>
+              <div>12</div>
+              <div>13</div>
+              <div>14</div>
+              <div>15</div>
+              <div>16</div>
+              <div>17</div>
+              <div>18</div>
+              <div>19</div>
+              <div>20</div>
+            </div>
+          </div>
+          <div id="auto-fit" class="wrapper-grid">
+            <h2 class="heading">auto-fit</h2>
+            <p class="text">
+              auto-fit - автоматически переносит ячейки на новую колонку в зависимости от ширины экрана, при этом растягивает элементы на всю ширину.
+            </p>
+            <p class="text">
+              grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+            </p>
+            <div class="grid-8 grid-box">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>10</div>
+              <div>11</div>
+              <div>12</div>
+              <div>13</div>
+              <div>14</div>
+              <div>15</div>
+              <div>16</div>
+              <div>17</div>
+              <div>18</div>
+              <div>19</div>
+              <div>20</div>
+            </div>
+          </div>
+          <div id="moving-columns" class="wrapper-grid dark-block">
+            <h2 class="heading">Перемещение ячеек внутри сетки (по колонкам)</h2>
+            <p class="text">
+              Дочернему элементу задаётся: grid-column-start: 1; grid-column-end: 5;
+            </p>
+            <p class="text">
+              Или сокращённо: grid-column: 1 / 5;
+            </p>
+            <pre>
+.grid-9 &gt; div:nth-child(1) {
+  grid-column-start: 1;
+  grid-column-end: 5; <i>// или -1</i>
+
+  <i>// grid-column: 1 / 5; - сокращённо</i>
+}
+            </pre>
+            <div class="grid-9 grid-box">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>10</div>
+              <div>11</div>
+              <div>12</div>
+              <div>13</div>
+              <div>14</div>
+              <div>15</div>
+              <div>16</div>
+              <div>17</div>
+              <div>18</div>
+              <div>19</div>
+              <div>20</div>
+            </div>
+          </div>
+          <div id="moving-rows" class="wrapper-grid">
+            <h2 class="heading">Перемещение ячеек внутри сетки (по рядам)</h2>
+            <p class="text">
+              Дочернему элементу задаётся: grid-row-start: 2; grid-row-end: 4;
+            </p>
+            <p class="text">
+              Или сокращённо grid-row: 2 / 4;
+            </p>
+            <pre>
+div &gt; div:nth-child(6) {
+  grid-column: 2 / 5;
+
+  grid-row-start: 2;
+  grid-row-end: 4;
+
+  <i>grid-row: 2 / 4; - сокращённо</i>
+}
+            </pre>
+            <div class="grid-10 grid-box">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>10</div>
+              <div>11</div>
+              <div>12</div>
+              <div>13</div>
+              <div>14</div>
+              <div>15</div>
+              <div>16</div>
+              <div>17</div>
+              <div>18</div>
+              <div>19</div>
+              <div>20</div>
+            </div>
+          </div>
+          <div id="moving-items" class="wrapper-grid dark-block">
+            <h2 class="heading">Перемещение ячеек внутри колонок и рядов</h2>
+            <pre>
+<i>// родитель</i>
+.grid-11 {
+  justify-items: start;
+  align-items: stretch;
+
+  <i>// дочерний элемент</i>
+  div {
+    &:nth-child(6) {
+      justify-self: end;
+      align-self: center;
+    }
+  }
+}
+            </pre>
+            <div class="grid-11 grid-box">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, rerum.
+              </div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>10</div>
+              <div>11</div>
+              <div>12</div>
+              <div>13</div>
+              <div>14</div>
+              <div>15</div>
+              <div>16</div>
+              <div>17</div>
+              <div>18</div>
+              <div>19</div>
+              <div>20</div>
+            </div>
+          </div>
+          <div id="grid-template" class="wrapper-grid">
+            <h2 class="heading">Сокращённая запись grid-template</h2>
+            <p class="text">
+              grid-template: repeat(3, 100px) / repeat(4, 150px);
+            </p>
+            <i>grid-template: rows / columns;</i>
+            <br><br>
+            <div class="grid-12 grid-box">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>10</div>
+              <div>11</div>
+              <div>12</div>
+              <div>13</div>
+              <div>14</div>
+              <div>15</div>
+              <div>16</div>
+              <div>17</div>
+              <div>18</div>
+              <div>19</div>
+              <div>20</div>
+            </div>
+          </div>
+          <div id="areas" class="wrapper-grid dark-block">
+            <h2 class="heading">Области сетки grid areas</h2>
+            <p class="text"></p>
+            <p class="text"></p>
+            <p class="text"></p>
+            <pre>
+&lt;div id="wrapper" class="wrapper"&gt;
+  &lt;header&gt;HEADER&lt;/header&gt;
+  &lt;aside&gt;SIDEBAR&lt;/aside&gt;
+  &lt;main&gt;MAIN&lt;/main&gt;
+  &lt;footer&gt;FOOTER&lt;/footer&gt;
+&lt;/div&gt;
+
+<i>// родитель</i>
+.wrapper {
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 100px 1fr 100px;
+
+  grid-template-areas:
+    "header header"
+    "aside main"
+    "aside footer";
+}
+
+<i>// дочерние элементы</i>
+.wrapper &gt; header {
+  grid-area: header;
+}
+.wrapper &gt; aside {
+  grid-area: aside;
+}
+.wrapper &gt; main {
+  grid-area: main;
+}
+.wrapper &gt; footer {
+  grid-area: footer;
+}
+
+            </pre>
+            <div class="grid-13 grid-box">
+              <header>HEADER</header>
+              <aside>SIDEBAR</aside>
+              <main>
+                <h3>MAIN</h3>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem consectetur aut molestias placeat, quibusdam veniam consequatur ut dolorem hic, nam assumenda fugit in repellat sed maiores recusandae eius, impedit illum!
+                  Non, temporibus recusandae? Impedit corporis ullam velit beatae suscipit libero sit fugit est perferendis atque animi voluptates hic unde optio recusandae modi at, laboriosam magni. Consectetur atque dolores distinctio id.
+                  Assumenda est distinctio aut. Illo quaerat consequatur placeat! Architecto, quo est in repudiandae beatae harum non debitis quaerat facilis, expedita praesentium laboriosam velit ab nulla, libero voluptate distinctio odio nostrum?
+                  Debitis, atque. Beatae, temporibus suscipit molestiae ea, nihil quae eligendi est excepturi voluptatum quisquam nisi! Quidem dolorum nam et aperiam minus maxime tempora excepturi ducimus commodi! Tempore dolore dicta consequuntur?
+                  Labore ad quas obcaecati. Magni accusamus, nulla explicabo tempore qui debitis ab possimus ipsum tempora. Voluptates, hic distinctio sapiente explicabo repellendus necessitatibus eum saepe possimus magnam ab eligendi maiores deserunt.
+                  Unde ab voluptates dignissimos veritatis dolorem numquam exercitationem mollitia suscipit magni ad, repellat eos. Eligendi est nihil totam iusto repellendus blanditiis perspiciatis voluptates eos laudantium! Fugiat non molestias modi id.
+                  Amet expedita excepturi aliquid eos rerum dicta fuga accusamus! Nisi quos vitae nam autem non, excepturi doloremque minus culpa placeat officia eaque beatae, unde consequatur soluta, et ea praesentium dolorem!
+                  Impedit provident necessitatibus, debitis ipsam facere facilis dolor consequuntur earum cum deserunt cupiditate expedita, sequi voluptate, eveniet tempora? Eos delectus quasi recusandae nulla sapiente culpa praesentium pariatur ipsum quis veritatis.
+                  Voluptate corporis praesentium fugiat nisi tempore est quo tempora, id minus ipsum eligendi nobis aut deleniti repellendus temporibus accusamus eum numquam quos error dicta repellat modi aperiam. Possimus, quibusdam nemo!
+                  Quo totam ipsa sed impedit aliquam sint incidunt eaque dignissimos ea. Dolores nam mollitia quia animi necessitatibus, alias voluptatem laudantium in omnis magnam dolorem magni minima nostrum, provident exercitationem? Ab.
+                </p>
+              </main>
+              <footer>FOOTER</footer>
+            </div>
+          </div>
+          <div id="attachmed" class="wrapper-grid">
+            <h2 class="heading">Вложенные сетки</h2>
+            <div class="grid-14 grid-box">
+              <header>HEADER</header>
+              <aside>SIDEBAR</aside>
+              <main>
+                <div class="item item-1">ITEM 1</div>
+                <div class="item item-2">ITEM 2</div>
+                <div class="item item-3">ITEM 3</div>
+                <div class="item item-4">ITEM 4</div>
+              </main>
+              <footer>FOOTER</footer>
+            </div>
+          </div>
+          <!-- <div class="wrapper-grid dark-block">
+            <div class="grid-15 grid-box">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>10</div>
+              <div>11</div>
+              <div>12</div>
+              <div>13</div>
+              <div>14</div>
+              <div>15</div>
+              <div>16</div>
+              <div>17</div>
+              <div>18</div>
+              <div>19</div>
+              <div>20</div>
+            </div>
+          </div>
+          <div class="wrapper-grid">
+            <div class="grid-16 grid-box">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>10</div>
+              <div>11</div>
+              <div>12</div>
+              <div>13</div>
+              <div>14</div>
+              <div>15</div>
+              <div>16</div>
+              <div>17</div>
+              <div>18</div>
+              <div>19</div>
+              <div>20</div>
+            </div>
+          </div>
+          <div class="wrapper-grid dark-block">
+            <div class="grid-17 grid-box">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>10</div>
+              <div>11</div>
+              <div>12</div>
+              <div>13</div>
+              <div>14</div>
+              <div>15</div>
+              <div>16</div>
+              <div>17</div>
+              <div>18</div>
+              <div>19</div>
+              <div>20</div>
+            </div>
+          </div>
+          <div class="wrapper-grid">
+            <div class="grid-18 grid-box">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>10</div>
+              <div>11</div>
+              <div>12</div>
+              <div>13</div>
+              <div>14</div>
+              <div>15</div>
+              <div>16</div>
+              <div>17</div>
+              <div>18</div>
+              <div>19</div>
+              <div>20</div>
+            </div>
+          </div> -->
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+
+</html>

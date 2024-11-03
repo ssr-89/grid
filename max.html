@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MaxGraph: Почему Grid лучше для простой сетки</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div id="wrapper" class="wrapper">
+    <header id="header" class="header">
+      <div class="header__container">
+        <ul class="header__pages pages list">
+          <li class="pages__item">
+            <a href="index.html" class="pages__link link">Главная</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main id="main" class="main">
+      <section id="hero" class="hero">
+        <div class="hero__container">
+          <h1 class="hero__title">Grid or Flex?</h1>
+          <div class="parent">
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+          </div>
+          <pre>
+<strong>HTML</strong>
+&lt;div class="parent"&gt;
+  &lt;div class="child"&gt;&lt;/div&gt;
+  &lt;div class="child"&gt;&lt;/div&gt;
+  &lt;div class="child"&gt;&lt;/div&gt;
+  &lt;div class="child"&gt;&lt;/div&gt;
+  &lt;div class="child"&gt;&lt;/div&gt;
+  &lt;div class="child"&gt;&lt;/div&gt;
+  &lt;div class="child"&gt;&lt;/div&gt;
+  &lt;div class="child"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+<strong>CSS</strong>
+<i>// parent - родительский блок</i>
+.parent {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); <i>// 12 колонок</i>
+  gap: 23px;
+}
+
+<i>// child - дочерний блок</i>
+.child {
+  grid-column: span 3; <i>// занимает 3 колонки из 12</i>
+
+  min-height: 300px;
+  background-color: aquamarine;
+}
+
+<i>// брейкпоинты</i>
+@media (max-width: 991.98px) {
+  .parent {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+@media (max-width: 479.98px) {
+  .parent {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+          </pre>
+        </div>
+      </section>
+    </main>
+    <footer id="footer" class="footer"></footer>
+  </div>
+</body>
+
+</html>
